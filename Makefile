@@ -81,6 +81,8 @@ generate: controller-gen ## Generate code containing DeepCopy, DeepCopyInto, and
 
 fmt: ## Run go fmt against code.
 	go fmt ./...
+
+goimports: ## Run goimports for controllers and main.go
 	goimports -w -local github.com/DanielXLee controllers/
 	goimports -w -local github.com/DanielXLee main.go
 
