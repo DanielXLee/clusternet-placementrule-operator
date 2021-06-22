@@ -19,7 +19,6 @@ package controllers
 import (
 	"context"
 
-	appsv1alpha1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes"
@@ -27,6 +26,8 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
+
+	appsv1alpha1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
 )
 
 // PlacementRuleReconciler reconciles a PlacementRule object

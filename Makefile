@@ -81,9 +81,19 @@ generate: controller-gen ## Generate code containing DeepCopy, DeepCopyInto, and
 
 fmt: ## Run go fmt against code.
 	go fmt ./...
+	goimports -w -local github.com/DanielXLee controllers/
+	goimports -w -local github.com/DanielXLee main.go
 
 vet: ## Run go vet against code.
 	go vet ./...
+
+tidy: ## Run go mod tidy -v
+	go mod tidy -v
+
+FINDFILES=find . \( -path ./.git -o -path ./.github -o -path ./testbin \) -prune -o -type f
+XARGS = xargs -0 ${XARGS_FLAGS}
+lint-go: ## Run lint go
+	@${FINDFILES} -name '*.go' \( ! \( -name '*.gen.go' -o -name '*.pb.go' \) \) -print0 | ${XARGS} common/scripts/lint_go.sh
 
 ENVTEST_ASSETS_DIR=$(shell pwd)/testbin
 test: manifests generate fmt vet ## Run tests.

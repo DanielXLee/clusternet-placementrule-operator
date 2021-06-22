@@ -18,14 +18,15 @@ import (
 	"context"
 	"sort"
 
-	"k8s.io/klog"
+	"k8s.io/klog/v2"
 
-	appsv1alpha1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
-	"github.com/DanielXLee/clusternet-placementrule-operator/controllers/utils"
 	spokeClusterV1 "github.com/clusternet/clusternet/pkg/apis/clusters/v1beta1"
 	rbacv1 "k8s.io/api/authorization/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+
+	appsv1alpha1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
+	"github.com/DanielXLee/clusternet-placementrule-operator/controllers/utils"
 )
 
 func (r *PlacementRuleReconciler) hubReconcile(instance *appsv1alpha1.PlacementRule) error {

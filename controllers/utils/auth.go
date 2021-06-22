@@ -19,7 +19,6 @@ import (
 	"encoding/base64"
 	"strings"
 
-	appv1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
 	spokeClusterV1 "github.com/clusternet/clusternet/pkg/apis/clusters/v1beta1"
 	rbacv1 "k8s.io/api/authorization/v1"
 	"k8s.io/apimachinery/pkg/api/meta"
@@ -27,6 +26,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/klog/v2"
+
+	appv1 "github.com/DanielXLee/clusternet-placementrule-operator/api/v1alpha1"
 )
 
 var (
